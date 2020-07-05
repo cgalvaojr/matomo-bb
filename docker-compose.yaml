@@ -1,0 +1,54 @@
+###############################################################################
+#                          Generated on phpdocker.io                          #
+###############################################################################
+version: "3.1"
+services:
+
+    mariadb:
+      image: mariadb:10.4
+      container_name: matomo-mariadb
+      working_dir: /application
+      volumes:
+        - .:/application
+      environment:
+        - MYSQL_ROOT_PASSWORD=matomo
+        - MYSQL_DATABASE=matomo
+        - MYSQL_USER=matomo
+        - MYSQL_PASSWORD=matomo
+      ports:
+        - "1028:3306"
+
+    mariadbtests:
+      image: mariadb:10.4
+      container_name: matomo-tests-mariadb
+      working_dir: /application
+      volumes:
+        - .:/application
+      environment:
+        - MYSQL_ROOT_PASSWORD=matomo
+        - MYSQL_DATABASE=matomo
+        - MYSQL_USER=matomo-teste
+        - MYSQL_PASSWORD=matomo
+      ports:
+        - "3307:3306"
+
+    webserver:
+      image: nginx:alpine
+      container_name: matomo-tests-webserver
+      working_dir: /application
+      volumes:
+          - .:/application
+          - ./phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      ports:
+       - "1025:80"
+      links: 
+        - mariadb
+        - mariadbtests
+
+    php-fpm:
+      build: phpdocker/php-fpm
+      container_name: matomo-tests-php-fpm
+      working_dir: /application
+      volumes:
+        - .:/application
+        - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.4/fpm/conf.d/99-overrides.ini

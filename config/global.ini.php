@@ -12,11 +12,11 @@
 ;--------
 
 [database]
-host =
-username =
-password =
-dbname =
-tables_prefix =
+host = matomo-mariadb
+username = matomo
+password = matomo
+dbname = matomo
+tables_prefix = matomo_
 port = 3306
 adapter = PDO\MYSQL
 type = InnoDB
@@ -58,11 +58,11 @@ dbname =
 port = 3306
 
 [database_tests]
-host = localhost
-username = "@USERNAME@"
-password =
-dbname = matomo_tests
-tables_prefix = matomotests_
+host = matomo-tests-mariadb
+username = matomo-teste
+password = matomo
+dbname = matomo
+tables_prefix = matomo_
 port = 3306
 adapter = PDO\MYSQL
 type = InnoDB
@@ -82,8 +82,8 @@ ssl_no_verify = 1
 ; note: the REQUEST_URI should not contain "plugins" or "tests" in the PATH
 http_host   = localhost
 remote_addr = "127.0.0.1"
-request_uri = "@REQUEST_URI@"
-port =
+request_uri = /
+port = 1025
 enable_logging = 0
 
 [log]
