@@ -7,5 +7,12 @@ pipeline {
       }
     }
 
+    stage('Build') {
+      steps {
+        sh '''docker-compose up -d
+docker exec matomo-tests-webserver php composer install'''
+      }
+    }
+
   }
 }
