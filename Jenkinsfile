@@ -10,7 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         sh '''docker-compose up -d
-docker exec matomo-tests-webserver php composer install'''
+docker exec matomo-tests-php-fpm php composer install'''
       }
     }
 
