@@ -10,7 +10,7 @@ pipeline {
 
     stage('Construindo dependências') {
       steps {
-        sh 'php composer install'
+        sh 'php /bin/composer install'
       }
     }
 
