@@ -4,14 +4,14 @@ pipeline {
     stage('Test') {
       steps {
         echo 'Iniciando a build'
-        sh 'cd \'/home/jenkins/workspace\''
+        sh 'cd \'/var/www/html\''
       }
     }
 
     stage('Build') {
       steps {
-        sh '''docker-compose up -d
-docker exec matomo-tests-php-fpm php composer install'''
+        sh '''git pull
+php composer install'''
       }
     }
 
