@@ -8,10 +8,9 @@ pipeline {
       }
     }
 
-    stage('Construindo dependências') {
+    stage('Construindo dependÃªncias') {
       steps {
-        sh '''git pull
-php composer install'''
+        sh 'php composer install'
       }
     }
 
