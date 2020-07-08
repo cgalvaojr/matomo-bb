@@ -1,14 +1,14 @@
 pipeline {
   agent any
   stages {
-    stage('Test') {
+    stage('Iniciando') {
       steps {
         echo 'Iniciando a build'
         sh 'cd \'/var/www/html\''
       }
     }
 
-    stage('Build') {
+    stage('Construindo dependências') {
       steps {
         sh '''git pull
 php composer install'''
