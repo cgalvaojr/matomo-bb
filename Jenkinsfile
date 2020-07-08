@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        echo 'Iniciando a build'
         ws(dir: '/home/jenkins/workspace')
+        echo 'Iniciando a build'
       }
     }
 
