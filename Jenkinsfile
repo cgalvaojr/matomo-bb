@@ -25,7 +25,7 @@ pipeline {
 
     stage('Testes de integração') {
       steps {
-        sh 'php console tests:run integration'
+        sh 'php console tests:run ActionSiteSearchTest'
       }
     }
 
