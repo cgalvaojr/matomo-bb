@@ -18,6 +18,7 @@ pipeline {
       steps {
         sh 'cd /var/www/html'
         sh 'php console tests:run unit'
+        sh 'ls -lah'
       }
     }
 
