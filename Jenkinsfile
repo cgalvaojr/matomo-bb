@@ -8,13 +8,13 @@ pipeline {
       }
     }
 
-    stage('Construindo dependências') {
+    stage('Construindo dependÃªncias') {
       steps {
         sh 'php /bin/composer install'
       }
     }
 
-    stage('Testes unit�rios') {
+    stage('Testes unitarios') {
       steps {
         dir(path: '/var/www/html') {
           sh 'php console tests:run unit'
@@ -23,7 +23,7 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
         sh 'php console tests:run integration'
       }
