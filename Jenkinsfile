@@ -14,5 +14,20 @@ pipeline {
       }
     }
 
+    stage('Testes unitários') {
+      steps {
+        dir(path: '/var/www/html') {
+          sh 'php console tests:run unit'
+        }
+
+      }
+    }
+
+    stage('') {
+      steps {
+        sh 'php console tests:run integration'
+      }
+    }
+
   }
 }
