@@ -8,7 +8,7 @@ pipeline {
       }
     }
 
-    stage('Construindo dependÃªncias') {
+    stage('Construindo dependÃƒÂªncias') {
       steps {
         sh 'php /bin/composer install'
       }
@@ -23,7 +23,7 @@ pipeline {
       }
     }
 
-    stage('Testes de integra��o') {
+    stage('Testes de integração') {
       steps {
         sh 'php console tests:run integration'
       }
