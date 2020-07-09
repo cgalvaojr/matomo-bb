@@ -8,7 +8,7 @@ pipeline {
       }
     }
 
-    stage('Construindo dependÃƒÂªncias') {
+    stage('Construindo dependencias') {
       steps {
         sh 'php /bin/composer install'
       }
