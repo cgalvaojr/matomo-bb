@@ -16,10 +16,8 @@ pipeline {
 
     stage('Testes unitarios') {
       steps {
-        dir(path: '/var/www/html') {
-          sh 'php console tests:run unit'
-        }
-
+        dir(path: '/var/www/html')
+        sh 'php console tests:run unit'
       }
     }
 
