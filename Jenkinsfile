@@ -17,7 +17,7 @@ pipeline {
     stage('Testes unitarios') {
       steps {
         sh 'cd /var/www/html'
-        sh 'php console tests:run unit'
+        sh 'php console tests:run integration'
         sh 'ls -lah'
       }
     }
