@@ -16,7 +16,7 @@ pipeline {
 
     stage('Testes unitarios') {
       steps {
-        dir(path: '/var/www/html/matomo')
+        sh 'cd /var/www/html'
         sh 'php console tests:run unit'
       }
     }
