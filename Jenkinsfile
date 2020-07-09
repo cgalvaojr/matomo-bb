@@ -17,12 +17,13 @@ pipeline {
     stage('Testes unitarios') {
       steps {
         sh 'cd /var/www/html'
-        sh 'php console tests:run integration'
+        sh 'php console tests:run unit'
         sh 'ls -lah'
+        sh 'php console development:enable'
       }
     }
 
-    stage('error') {
+    stage('Testes de integração') {
       steps {
         sh 'php console tests:run integration'
       }
