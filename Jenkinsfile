@@ -31,7 +31,7 @@ pipeline {
 
     stage('Sonar') {
       steps {
-        withSonarQubeEnv(installationName: 'SonarQube', credentialsId: '2ea7f96b45f2a0ca30ef91f3dd7154132f03fd55')
+        withSonarQubeEnv(installationName: 'SonarQube', credentialsId: 'jenkins-matomo')
       }
     }
 
