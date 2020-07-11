@@ -31,7 +31,7 @@ pipeline {
 
     stage('Sonar') {
       steps {
-        withSonarQubeEnv(installationName: 'SonarQube', credentialsId: 'Jenkins-Sonar')
+        withSonarQubeEnv(installationName: 'SonarQube', credentialsId: 'sonarqube-webhook')
       }
     }
 
