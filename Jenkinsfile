@@ -32,11 +32,15 @@ pipeline {
     stage('Sonar') {
       steps {
         withSonarQubeEnv(installationName: 'SonarQube', credentialsId: 'sonarqube-webhook') {
-          sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
-        //withSonarQubeEnv('SonarQube')
+          sh '''sonar-scanner \\
+  -Dsonar.projectKey=jenkins-matomo \\
+  -Dsonar.sources=. \\
+  -Dsonar.host.url=http://jenkins.local:9000 \\
+  -Dsonar.login=eb16064839194d2e7a4e3e2ad83d11ba1242ea88'''
+        }
+
       }
     }
 
   }
-}
 }
