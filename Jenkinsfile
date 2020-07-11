@@ -31,6 +31,7 @@ pipeline {
 
     stage('Sonar') {
       steps {
+        sh "${scannerHome}/bin/sonar-scanner"
         withSonarQubeEnv(installationName: 'SonarQube', credentialsId: 'Jenkins-Sonar')
       }
     }
