@@ -29,5 +29,15 @@ pipeline {
       }
     }
 
+    stage('Sonar') {
+      steps {
+        sh '''sonar-scanner \\
+  -Dsonar.projectKey=jenkins-matomo \\
+  -Dsonar.sources=. \\
+  -Dsonar.host.url=http://jenkins.local:9000 \\
+  -Dsonar.login=2ea7f96b45f2a0ca30ef91f3dd7154132f03fd55'''
+      }
+    }
+
   }
 }
