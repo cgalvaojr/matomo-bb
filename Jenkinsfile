@@ -31,10 +31,7 @@ pipeline {
 
     stage('Sonar') {
       steps {
-        withSonarQubeEnv(installationName: 'jenkins-matomo', credentialsId: '2ea7f96b45f2a0ca30ef91f3dd7154132f03fd55') {
-          waitForQualityGate(credentialsId: '2ea7f96b45f2a0ca30ef91f3dd7154132f03fd55', abortPipeline: true)
-        }
-
+        withSonarQubeEnv(installationName: 'jenkins-matomo', credentialsId: 'd8dd2174cfd8a7d7fbf0c3c9f9447084e4b4853f')
       }
     }
 
