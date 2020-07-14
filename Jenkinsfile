@@ -31,7 +31,7 @@ pipeline {
 
     stage('Sonar') {
       steps {
-        withSonarQubeEnv(installationName: 'sonarserver', credentialsId: 'sonarqube-webhook') {
+        withSonarQubeEnv(installationName: 'SonarQube', credentialsId: 'sonarqube-webhook') {
           sh 'mvn sonar:sonar'
         }
 
