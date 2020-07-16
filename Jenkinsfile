@@ -31,10 +31,7 @@ pipeline {
 
     stage('Sonar') {
       steps {
-        withSonarQubeEnv(installationName: 'SonarQube', credentialsId: 'SonarQube Server') {
-          sh 'bin/sonar-scanner.sh'
-        }
-
+        withSonarQubeEnv(installationName: 'SonarQube', credentialsId: 'SonarQube Server')
       }
     }
 
