@@ -38,7 +38,7 @@ pipeline {
     stage('Sonar') {
       steps {
         withSonarQubeEnv(installationName: 'SonarQube', credentialsId: 'SonarQube Server') {
-          sh 'bin/sonar-scanner -Dsonar.projectKey=matomo -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000 -Dsonar.login=matomo'
+          sh '/var/jenkins_home/sonnar-scanner-4.4.0.2170/bin/sonar-scanner -Dsonar.projectKey=matomo -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000 -Dsonar.login=matomo'
         }
 
       }
