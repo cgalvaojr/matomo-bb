@@ -38,7 +38,11 @@ pipeline {
     stage('Sonar') {
       steps {
         withSonarQubeEnv(installationName: 'SonarQube', credentialsId: 'SonarQube Server') {
-          sh 'mvn clean package sonar:sonar'
+          sonar-scanner \
+          -Dsonar.projectKey=matomo \
+          -Dsonar.sources=. \
+          -Dsonar.host.url=http://localhost:9000 \
+          -Dsonar.login=matomo
         }
 
       }
