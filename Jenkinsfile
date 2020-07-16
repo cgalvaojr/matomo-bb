@@ -5,7 +5,7 @@ pipeline {
             args '-v /root/.m2:/root/.m2' 
         }
     }
-  agent any
+ // agent any
   stages {
     stage('Iniciando') {
       steps {
