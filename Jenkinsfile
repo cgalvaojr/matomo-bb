@@ -7,7 +7,7 @@ pipeline {
 
   }
   stages {
-    stage('Clonando reposit�rio') {
+    stage('Clonando repositorio') {
       steps {
         sh 'cd \'/var/www/html\''
       }
@@ -28,7 +28,7 @@ pipeline {
       }
     }
 
-    stage('Testes de integração') {
+    stage('Testes de integracao') {
       steps {
         sh 'php console tests:run ActionSiteSearchTest integration'
       }
