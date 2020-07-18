@@ -25,7 +25,7 @@ pipeline {
         sh 'cd /var/www/html'
         sh 'php console development:enable'
         sh 'ls -lah'
-        sh 'php console tests:run ArchiverTests'
+        sh 'php console tests:run ArchiverTests unit'
       }
     }
 
