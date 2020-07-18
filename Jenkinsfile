@@ -7,9 +7,8 @@ pipeline {
 
   }
   stages {
-    stage('Iniciando') {
+    stage('Clonando reposit�rio') {
       steps {
-        echo 'Iniciando a build'
         sh 'cd \'/var/www/html\''
       }
     }
@@ -22,16 +21,16 @@ pipeline {
 
     stage('Testes unitarios') {
       steps {
-        sh 'cd /var/www/html'
+        sh '#cd /var/www/html'
         sh 'php console development:enable'
-        sh 'ls -lah'
+        sh '#ls -lah'
         sh 'php console tests:run ArchiverTests unit'
       }
     }
 
     stage('Testes de integração') {
       steps {
-        sh 'php console tests:run ActionSiteSearchTest'
+        sh 'php console tests:run ActionSiteSearchTest integration'
       }
     }
 
