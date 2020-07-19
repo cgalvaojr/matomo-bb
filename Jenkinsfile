@@ -40,7 +40,7 @@ php console git:pull'''
 
     stage('Testes de integracao') {
       steps {
-        sh 'php console tests:run SEO integration'
+        sh 'php console tests:run SegmentEditor integration'
       }
     }
 
