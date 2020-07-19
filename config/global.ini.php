@@ -12,7 +12,7 @@
 ;--------
 
 [database]
-host = matomo-mariadb
+host = 120.0.0.1
 username = matomo
 password = matomo
 dbname = matomo
