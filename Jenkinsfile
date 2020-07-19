@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Clonando repositorio') {
       steps {
-        dir(path: '/var/www/html')
+        sh 'cd /var/www/html'
       }
     }
 
