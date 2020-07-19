@@ -40,7 +40,7 @@ php console git:pull'''
 
     stage('Testes de integracao') {
       steps {
-        sh 'php console tests:run Referrers integration'
+        sh 'php console tests:run QueuedTracking integration'
       }
     }
 
