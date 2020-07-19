@@ -40,7 +40,7 @@ php console git:pull'''
 
     stage('Testes de integracao') {
       steps {
-        sh 'php console tests:run MobileMessaging integration'
+        sh 'php console tests:run MarketPlace integration'
       }
     }
 
