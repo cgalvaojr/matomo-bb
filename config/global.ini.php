@@ -12,7 +12,17 @@
 ;--------
 
 [database]
-host = matomo-mariadb
+host = 0.0.0.0
+username = matomo
+password = matomo
+dbname = matomo
+tables_prefix = matomo_
+port = 1028
+adapter = PDO\MYSQL
+type = InnoDB
+schema = Mysql
+
+<!-- host = matomo-mariadb
 username = matomo
 password = matomo
 dbname = matomo
@@ -20,7 +30,7 @@ tables_prefix = matomo_
 port = 3306
 adapter = PDO\MYSQL
 type = InnoDB
-schema = Mysql
+schema = Mysql -->
 
 ; Database SSL Options START
 ; Turn on or off SSL connection to database, possible values for enable_ssl: 1 or 0
