@@ -19,8 +19,8 @@ pipeline {
 #php -r "if (hash_file(\'sha384\', \'composer-setup.php\') === \'e5325b19b381bfd88ce90a5ddb7823406b2a38cff6bb704b0acc289a09c8128d4a8ce2bbafcd1fcbdc38666422fe2806\') { echo \'Installer verified\'; } else { echo \'Installer corrupt\'; unlink(\'composer-setup.php\'); } echo PHP_EOL;"
 #php composer-setup.php --filename composer
 #php -r "unlink(\'composer-setup.php\');"'''
-        sh '''curl -sS https://getcomposer.org/installer | php 
-php composer.phar install
+        sh '''curl -sS https://getcomposer.org/installer | php \\
+php composer.phar install \\
 php console git:pull'''
         sh 'php /bin/composer self-update > /dev/null'
         sh 'php /bin/composer install # --no-dev > /dev/null'
