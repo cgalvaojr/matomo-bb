@@ -40,7 +40,7 @@ php console git:pull'''
 
     stage('Testes de integracao') {
       steps {
-        sh 'php console tests:run VisitFrequency integration'
+        sh 'php console tests:run UsersManager integration'
       }
     }
 
