@@ -40,7 +40,7 @@ php console git:pull'''
 
     stage('Testes de integracao') {
       steps {
-        sh './console tests:run Bandwidth integration'
+        sh 'docker exec matomo-tests-php-fpm ./console tests:run Bandwidth integration'
       }
     }
 
