@@ -12,7 +12,7 @@
 ;--------
 
 [database]
-host = 120.0.0.1
+host = 127.0.0.1
 username = matomo
 password = matomo
 dbname = matomo
