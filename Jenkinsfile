@@ -9,7 +9,13 @@ pipeline {
   stages {
     stage('Clonando repositorio') {
       steps {
-        sh 'cd \'/var/www/html\''
+        sh '''cd \'/var/www/html\'
+'''
+        sh 'php console git:pull'
+        sh 'php composer self-update > /dev/null'
+        sh 'php composer install --no-dev > /dev/null'
+        sh 'php console core:update --yes > /dev/null'
+        sh 'php console custom-piwik-js:update > /dev/null'
       }
     }
 
