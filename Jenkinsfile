@@ -40,7 +40,7 @@ php console git:pull'''
 
     stage('Testes de integracao') {
       steps {
-        sh 'php console tests:run Monolog integration'
+        sh 'php console tests:run MobileMessaging integration'
       }
     }
 
