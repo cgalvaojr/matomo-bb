@@ -24,7 +24,7 @@ php composer.phar install
 php console git:pull'''
         sh 'php /bin/composer self-update > /dev/null'
         sh 'php /bin/composer install # --no-dev > /dev/null'
-        sh '#php console core:update --yes > /dev/null'
+        sh 'php console core:update --yes > /dev/null'
         sh 'php console custom-piwik-js:update > /dev/null'
       }
     }
