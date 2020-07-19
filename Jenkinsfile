@@ -9,19 +9,17 @@ pipeline {
   stages {
     stage('Clonando repositorio') {
       steps {
-        sh '''cd \'/var/www/html\'
-'''
-        sh 'php console git:pull'
-        sh 'php composer self-update > /dev/null'
-        sh 'php composer install --no-dev > /dev/null'
-        sh 'php console core:update --yes > /dev/null'
-        sh 'php console custom-piwik-js:update > /dev/null'
+        dir(path: '/var/www/html')
       }
     }
 
     stage('Construindo dependencias') {
       steps {
-        sh 'php /bin/composer install'
+        sh 'php console git:pull'
+        sh 'php /bin/composer self-update > /dev/null'
+        sh 'php /bin/composer install --no-dev > /dev/null'
+        sh 'php console core:update --yes > /dev/null'
+        sh 'php console custom-piwik-js:update > /dev/null'
       }
     }
 
