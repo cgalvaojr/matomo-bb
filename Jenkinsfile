@@ -40,7 +40,7 @@ php console git:pull'''
 
     stage('Testes de integracao') {
       steps {
-        sh 'php console tests:run Bandwidth integration'
+        sh 'cd /var/www/html/tests/PHPUnit &&  /var/www/html/vendor/bin/phpunit   --testsuite IntegrationTests /var/www/html/plugins/Bandwidth/tests'
       }
     }
 
