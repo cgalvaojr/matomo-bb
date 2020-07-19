@@ -6,6 +6,7 @@ disable_merged_assets = 1
 
 [Plugins]
 Plugins[] = "CorePluginsAdmin"
+Plugins[] = "Bandwidth"
 Plugins[] = "CoreAdminHome"
 Plugins[] = "CoreHome"
 Plugins[] = "WebsiteMeasurable"
