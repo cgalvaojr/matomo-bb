@@ -48,6 +48,9 @@ php console git:pull'''
     }
 
     stage('Build') {
+      environment {
+        BUILD_NUMBER = '${env.BUILD_NUMBER}'
+      }
       steps {
         sh 'zip matomo-build-${env.BUILD_NUMBER} /var/jenkins_home/workspace/matomo-bb_master'
       }
