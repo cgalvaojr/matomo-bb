@@ -36,7 +36,7 @@ php console git:pull'''
 
     stage('Testes de integracao') {
       steps {
-        sh './console tests:run Annotations integration'
+        sh './console tests:run ActionSiteSearchTest integration'
       }
     }
 
