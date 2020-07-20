@@ -36,7 +36,7 @@ php console git:pull'''
 
     stage('Testes de integracao') {
       steps {
-        sh './console tests:run CorePluginsAdmin integration'
+        sh './console tests:run CoreAdminHome integration'
       }
     }
 
