@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Clonando repositorio') {
       steps {
-        sh 'cd /var/www/html'
+        sh '#cd /var/www/html'
       }
     }
 
@@ -43,7 +43,6 @@ php console git:pull'''
 
     stage('Build') {
       steps {
-        
         sh 'zip matomo-build-${currentBuild.number}.zip /var/jenkins_home/workspace/matomo-bb_master'
       }
     }
