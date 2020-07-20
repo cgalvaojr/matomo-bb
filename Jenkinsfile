@@ -1,11 +1,5 @@
 pipeline {
-  agent {
-    any {
-      image 'maven:3-alpine'
-      args '-v /root/.m2:/root/.m2'
-    }
-
-  }
+  agent any
   stages {
     stage('Clonando repositorio') {
       steps {
@@ -52,9 +46,12 @@ php console git:pull'''
         BUILD_NUMBER = '${env.BUILD_NUMBER}'
       }
       steps {
-        sh 'zip matomo-build-${date +%s}.zip /var/jenkins_home/workspace/matomo-bb_master'
+        sh 'zip matomo-build-${env.BUILD_NUMBER}.zip /var/jenkins_home/workspace/matomo-bb_master'
       }
     }
 
+  }
+  environment {
+    BUILD_NUMBER = '${BUILD_NUMBER}'
   }
 }
