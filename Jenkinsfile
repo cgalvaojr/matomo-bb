@@ -27,9 +27,7 @@ php console git:pull'''
 
     stage('Testes unitarios') {
       steps {
-        sh '#cd /var/www/html'
         sh 'php console development:enable'
-        sh '#ls -lah'
         sh 'php console tests:run VisitTime unit'
       }
     }
