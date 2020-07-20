@@ -68,12 +68,13 @@ dbname =
 port = 3306
 
 [database_tests]
-host = matomo-tests-mariadb
+;host = matomo-tests-mariadb
+host = 0.0.0.0
 username = matomo-teste
 password = matomo
 dbname = matomo
 tables_prefix = matomo_
-port = 3306
+port = 3307
 adapter = PDO\MYSQL
 type = InnoDB
 schema = Mysql
