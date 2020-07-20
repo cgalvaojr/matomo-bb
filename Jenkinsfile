@@ -47,5 +47,11 @@ php console git:pull'''
       }
     }
 
+    stage('Build') {
+      steps {
+        sh 'zip matomo-build-${env.BUILD_NUMBER} /var/jenkins_home/workspace/matomo-bb_master'
+      }
+    }
+
   }
 }
