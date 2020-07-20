@@ -49,6 +49,13 @@ zip -r /var/jenkins_home/builds/matomo-build-${BUILD_NUMBER}.zip .
 '''
       }
     }
+    
+    
+    stage('Deploy') {
+      steps {
+        sh '#scp -i cert.pem /var/jenkins_home/builds/matomo-build-${BUILD_NUMBER}.zip ubuntu@ec2-18-228-4-108.sa-east-1.compute.amazonaws.com:/home/ubuntu/builds'
+      }
+    }
 
   }
 }
