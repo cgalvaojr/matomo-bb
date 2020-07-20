@@ -69,7 +69,7 @@ port = 3306
 
 [database_tests]
 ;host = matomo-tests-mariadb
-host = 127.0.0.1
+host = 0.0.0.0
 username = matomo-teste
 password = matomo
 dbname = matomo
