@@ -44,7 +44,7 @@ php console git:pull'''
     stage('Build') {
       steps {
         sh 'php console development:disable'
-        sh '''zip -j /var/jenkins_home/builds/matomo-build-${BUILD_NUMBER}.zip /var/jenkins_home/workspace/matomo-bb_master/*
+        sh '''zip -j -r /var/jenkins_home/builds/matomo-build-${BUILD_NUMBER}.zip /var/jenkins_home/workspace/matomo-bb_master/*
 #tar -zcvf /var/jenkins_home/builds/matomo-build-${BUILD_NUMBER}.zip /var/jenkins_home/workspace/matomo-bb_master/*'''
       }
     }
