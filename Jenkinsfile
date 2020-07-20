@@ -52,7 +52,7 @@ php console git:pull'''
         BUILD_NUMBER = '${env.BUILD_NUMBER}'
       }
       steps {
-        sh 'zip matomo-build-${env.BUILD_NUMBER} /var/jenkins_home/workspace/matomo-bb_master'
+        sh 'zip matomo-build-${BUILD_NUMBER} /var/jenkins_home/workspace/matomo-bb_master'
       }
     }
 
